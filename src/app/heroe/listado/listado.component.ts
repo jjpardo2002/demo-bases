@@ -1,0 +1,23 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-listado',
+  templateUrl: './listado.component.html',
+  styleUrls: ['./listado.component.scss']
+})
+export class ListadoComponent implements OnInit {
+  listaHeroes:string[]=[
+    'Ironman',
+    'Superman',
+    'Batman',
+    'Spiderman'
+  ];
+  heroeDel:string='';
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+  borrarItem(){
+    this.heroeDel=this.listaHeroes.shift() || ''
+  }
+}
